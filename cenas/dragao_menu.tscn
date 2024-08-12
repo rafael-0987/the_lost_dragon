@@ -1,0 +1,108 @@
+[gd_scene load_steps=16 format=3 uid="uid://cuyt213jp430t"]
+
+[ext_resource type="Script" path="res://scripts/dragao_menu.gd" id="1_7qpr7"]
+[ext_resource type="Texture2D" uid="uid://cihq4vlv7lpmg" path="res://sprite/dragao/dagrao-export.png" id="2_w481p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opnk7"]
+atlas = ExtResource("2_w481p")
+region = Rect2(0, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5h0ex"]
+atlas = ExtResource("2_w481p")
+region = Rect2(640, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_de5sx"]
+atlas = ExtResource("2_w481p")
+region = Rect2(1280, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyjkf"]
+atlas = ExtResource("2_w481p")
+region = Rect2(1920, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tui1"]
+atlas = ExtResource("2_w481p")
+region = Rect2(2560, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5s3lx"]
+atlas = ExtResource("2_w481p")
+region = Rect2(3200, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_te3xk"]
+atlas = ExtResource("2_w481p")
+region = Rect2(3840, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6c1nq"]
+atlas = ExtResource("2_w481p")
+region = Rect2(4480, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qd25d"]
+atlas = ExtResource("2_w481p")
+region = Rect2(5120, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6eqf"]
+atlas = ExtResource("2_w481p")
+region = Rect2(5760, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lkht"]
+atlas = ExtResource("2_w481p")
+region = Rect2(6400, 0, 640, 640)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6fkj5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opnk7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5h0ex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_de5sx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyjkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tui1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5s3lx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_te3xk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6c1nq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qd25d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6eqf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0lkht")
+}],
+"loop": true,
+"name": &"voando",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2hc86"]
+radius = 56.4135
+
+[node name="dragao_menu" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_7qpr7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_6fkj5")
+animation = &"voando"
+autoplay = "voando"
+frame = 5
+frame_progress = 0.713182
+
+[node name="collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2hc86")

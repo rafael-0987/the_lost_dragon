@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://br86148qvt5py"]
+
+[ext_resource type="FontFile" uid="uid://dvd5fcgqpcoa7" path="res://fonte-letra/pixel-comic-sans-undertale-sans-font.ttf" id="1_30g6v"]
+[ext_resource type="Script" path="res://scripts/dialog.gd" id="1_aclk4"]
+[ext_resource type="Texture2D" uid="uid://d1ow6vpxts466" path="res://sprite/dialog/caixa_nome.png" id="2_durgk"]
+[ext_resource type="Texture2D" uid="uid://bg201vcmmjev4" path="res://sprite/dialog/caixa_dialogo3.png" id="3_i1b4s"]
+
+[node name="dialog" type="CanvasLayer"]
+script = ExtResource("1_aclk4")
+
+[node name="conteiner" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 917.0
+offset_top = -168.0
+offset_right = -83.0
+offset_bottom = -168.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+
+[node name="esprite_name" type="Sprite2D" parent="conteiner"]
+scale = Vector2(8, 8)
+texture = ExtResource("2_durgk")
+
+[node name="label" type="Label" parent="conteiner"]
+layout_mode = 0
+offset_left = -127.0
+offset_top = -13.0
+offset_right = 125.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_30g6v")
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(570.75, 532)
+scale = Vector2(1.01133, 0.857812)
+texture = ExtResource("3_i1b4s")
+
+[node name="text_label" type="RichTextLabel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 314.0
+offset_top = 415.0
+offset_right = -44.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_30g6v")
+theme_override_font_sizes/normal_font_size = 32
+text = "oi amor"
+visible_characters = 0
+visible_ratio = 0.142857
+
+[node name="face" type="TextureRect" parent="."]
+offset_left = 65.0
+offset_top = 328.0
+offset_right = 254.0
+offset_bottom = 527.0
+expand_mode = 1

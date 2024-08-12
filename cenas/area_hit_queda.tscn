@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://buo26pcn1tnuj"]
+
+[ext_resource type="Script" path="res://scripts/area_hit_queda.gd" id="1_tqaea"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h1tyi"]
+
+[node name="area_hit_queda" type="Area2D"]
+script = ExtResource("1_tqaea")
+
+[node name="collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_h1tyi")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

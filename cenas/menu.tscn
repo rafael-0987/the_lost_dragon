@@ -1,0 +1,191 @@
+[gd_scene load_steps=16 format=3 uid="uid://2kokr51k6qtm"]
+
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_24h02"]
+[ext_resource type="FontFile" uid="uid://dvd5fcgqpcoa7" path="res://fonte-letra/pixel-comic-sans-undertale-sans-font.ttf" id="1_v8ywh"]
+[ext_resource type="Texture2D" uid="uid://bi3q421e0jefo" path="res://sprite/menu/Sprite-0002.png" id="2_3d857"]
+[ext_resource type="Texture2D" uid="uid://klcfmy5s8shf" path="res://sprite/menu/dragao-dorindo-sombra.png" id="5_n110v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8sfow"]
+atlas = ExtResource("5_n110v")
+region = Rect2(0, 0, 250, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75513"]
+atlas = ExtResource("5_n110v")
+region = Rect2(250, 0, 250, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prv4a"]
+atlas = ExtResource("5_n110v")
+region = Rect2(500, 0, 250, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5lkik"]
+atlas = ExtResource("5_n110v")
+region = Rect2(750, 0, 250, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_118eg"]
+atlas = ExtResource("5_n110v")
+region = Rect2(1000, 0, 250, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7riw3"]
+atlas = ExtResource("5_n110v")
+region = Rect2(1250, 0, 250, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k53ti"]
+atlas = ExtResource("5_n110v")
+region = Rect2(1500, 0, 250, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6uwy4"]
+atlas = ExtResource("5_n110v")
+region = Rect2(1750, 0, 250, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsihi"]
+atlas = ExtResource("5_n110v")
+region = Rect2(2000, 0, 250, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3vs7"]
+atlas = ExtResource("5_n110v")
+region = Rect2(2250, 0, 250, 125)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hb64v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8sfow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75513")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prv4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5lkik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_118eg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7riw3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k53ti")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6uwy4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsihi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3vs7")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_24h02")
+
+[node name="fundo" type="Sprite2D" parent="."]
+position = Vector2(581, 287.5)
+scale = Vector2(4.64, 4.568)
+texture = ExtResource("2_3d857")
+
+[node name="conteiner" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = -48.0
+offset_right = 51.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="namePlayer" type="LineEdit" parent="conteiner"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.384314, 0, 0.537255, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/minimum_character_width = 12
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_v8ywh")
+theme_override_font_sizes/font_size = 32
+placeholder_text = "Name:"
+max_length = 14
+
+[node name="play" type="Button" parent="conteiner"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.439216, 0.176471, 0.454902, 1)
+theme_override_colors/font_hover_color = Color(0.439216, 0.176471, 0.454902, 0.560784)
+theme_override_colors/font_focus_color = Color(0.439216, 0.176471, 0.454902, 0.560784)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_v8ywh")
+theme_override_font_sizes/font_size = 32
+text = "PLAY"
+flat = true
+
+[node name="quit" type="Button" parent="conteiner"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.439216, 0.176471, 0.454902, 1)
+theme_override_colors/font_hover_color = Color(0.439216, 0.176471, 0.454902, 0.560784)
+theme_override_colors/font_focus_color = Color(0.439216, 0.176471, 0.454902, 0.560784)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_v8ywh")
+theme_override_font_sizes/font_size = 32
+text = "QUIT"
+flat = true
+
+[node name="rank" type="Button" parent="conteiner"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.439216, 0.176471, 0.454902, 1)
+theme_override_colors/font_hover_color = Color(0.439216, 0.176471, 0.454902, 0.560784)
+theme_override_colors/font_focus_color = Color(0.439216, 0.176471, 0.454902, 0.560784)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_v8ywh")
+theme_override_font_sizes/font_size = 32
+text = "RANK"
+flat = true
+
+[node name="label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -312.0
+offset_top = 20.0
+offset_right = 312.0
+offset_bottom = 97.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.384314, 0.380392, 0.639216, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_v8ywh")
+theme_override_font_sizes/font_size = 64
+text = "THE LOST DRAGON"
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+position = Vector2(685, 306)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_hb64v")
+autoplay = "default"
+
+[connection signal="pressed" from="conteiner/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="conteiner/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="conteiner/rank" to="." method="_on_rank_pressed"]

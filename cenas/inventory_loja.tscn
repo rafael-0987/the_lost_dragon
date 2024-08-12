@@ -1,0 +1,89 @@
+[gd_scene load_steps=5 format=3 uid="uid://gw52rl3f2vss"]
+
+[ext_resource type="Texture2D" uid="uid://bavioeqwhutxm" path="res://sprite/inventario_loja/inventario.png" id="1_n8a37"]
+[ext_resource type="Script" path="res://scripts/inventory_loja.gd" id="1_s7iur"]
+[ext_resource type="FontFile" uid="uid://dvd5fcgqpcoa7" path="res://fonte-letra/pixel-comic-sans-undertale-sans-font.ttf" id="4_qi7gg"]
+[ext_resource type="Texture2D" uid="uid://bi16sba0utviu" path="res://sprite/inventario_loja/escudo.png" id="4_yfk75"]
+
+[node name="inventory_loja" type="Node2D"]
+process_mode = 3
+position = Vector2(40, 19)
+script = ExtResource("1_s7iur")
+
+[node name="fundo" type="Sprite2D" parent="."]
+position = Vector2(26, 23.5)
+scale = Vector2(1.01471, 0.836538)
+texture = ExtResource("1_n8a37")
+region_enabled = true
+region_rect = Rect2(0, 16, 136, 104)
+
+[node name="slot_1" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 61.0
+offset_bottom = 61.0
+scale = Vector2(0.77, 0.77)
+
+[node name="slot" type="Sprite2D" parent="slot_1"]
+position = Vector2(33.1169, 33.7662)
+scale = Vector2(4.78896, 4.22078)
+texture = ExtResource("1_n8a37")
+region_enabled = true
+region_rect = Rect2(144, 32, 16, 16)
+
+[node name="texture" type="TextureRect" parent="slot_1"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 52.0
+offset_bottom = 52.0
+expand_mode = 1
+
+[node name="compra_1" type="Button" parent="slot_1"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 66.0
+offset_right = 75.0
+offset_bottom = 93.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("4_qi7gg")
+theme_override_font_sizes/font_size = 14
+text = "COMPRAR"
+flat = true
+
+[node name="valor_1" type="Label" parent="slot_1"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -17.1429
+offset_right = 50.0
+offset_bottom = 8.85714
+theme_override_colors/font_color = Color(0, 0.784314, 0, 1)
+theme_override_fonts/font = ExtResource("4_qi7gg")
+text = "5"
+horizontal_alignment = 1
+
+[node name="sprite_escudo" type="Sprite2D" parent="slot_1"]
+position = Vector2(33.7662, 27.2727)
+scale = Vector2(0.714285, 0.71131)
+texture = ExtResource("4_yfk75")
+region_enabled = true
+region_rect = Rect2(392, 8, 48, 48)
+
+[node name="name_item" type="Label" parent="slot_1"]
+layout_mode = 0
+offset_left = 10.3896
+offset_top = 40.2597
+offset_right = 58.3896
+offset_bottom = 62.2597
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_qi7gg")
+theme_override_font_sizes/font_size = 14
+text = "escudo"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="slot_1/compra_1" to="." method="_on_compra_1_pressed"]

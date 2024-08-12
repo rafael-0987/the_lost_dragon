@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1jr38gk0fw15"]
+
+[ext_resource type="Texture2D" uid="uid://dg73wffyksri8" path="res://sprite/light/light-export.png" id="1_vk8pu"]
+
+[node name="light" type="Node2D"]
+
+[node name="blackout" type="PointLight2D" parent="."]
+color = Color(1, 0.619608, 0, 1)
+energy = 1.86
+texture = ExtResource("1_vk8pu")
+
+[node name="shadow" type="PointLight2D" parent="."]
+texture_filter = 2
+color = Color(1, 0.596078, 0, 1)
+energy = 1.36
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 3.0
+texture = ExtResource("1_vk8pu")
+texture_scale = 0.5

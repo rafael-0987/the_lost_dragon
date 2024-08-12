@@ -1,0 +1,106 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdqxbh48qb4ba"]
+
+[ext_resource type="Script" path="res://scripts/rank.gd" id="1_cjl5i"]
+
+[node name="rank" type="Control" node_paths=PackedStringArray("rank_conteiner")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cjl5i")
+rank_conteiner = NodePath("rankConteiner")
+
+[node name="rankConteiner" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -211.5
+offset_top = -88.0
+offset_right = 211.5
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="label" type="Label" parent="rankConteiner"]
+layout_mode = 2
+text = "Rank Dos 5 jogadores Que Terminou Em Menos Tempo"
+
+[node name="slot_1" type="HBoxContainer" parent="rankConteiner"]
+layout_mode = 2
+
+[node name="position" type="Label" parent="rankConteiner/slot_1"]
+layout_mode = 2
+text = "1-"
+
+[node name="name" type="Label" parent="rankConteiner/slot_1"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="score" type="Label" parent="rankConteiner/slot_1"]
+layout_mode = 2
+vertical_alignment = 1
+
+[node name="slot_2" type="HBoxContainer" parent="rankConteiner"]
+layout_mode = 2
+
+[node name="position" type="Label" parent="rankConteiner/slot_2"]
+layout_mode = 2
+text = "2-"
+
+[node name="name" type="Label" parent="rankConteiner/slot_2"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="score" type="Label" parent="rankConteiner/slot_2"]
+layout_mode = 2
+vertical_alignment = 1
+
+[node name="slot_3" type="HBoxContainer" parent="rankConteiner"]
+layout_mode = 2
+
+[node name="position" type="Label" parent="rankConteiner/slot_3"]
+layout_mode = 2
+text = "3-"
+
+[node name="name" type="Label" parent="rankConteiner/slot_3"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="score" type="Label" parent="rankConteiner/slot_3"]
+layout_mode = 2
+vertical_alignment = 1
+
+[node name="slot_4" type="HBoxContainer" parent="rankConteiner"]
+layout_mode = 2
+
+[node name="position" type="Label" parent="rankConteiner/slot_4"]
+layout_mode = 2
+text = "4-"
+
+[node name="name" type="Label" parent="rankConteiner/slot_4"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="score" type="Label" parent="rankConteiner/slot_4"]
+layout_mode = 2
+vertical_alignment = 1
+
+[node name="slot_5" type="HBoxContainer" parent="rankConteiner"]
+layout_mode = 2
+
+[node name="position" type="Label" parent="rankConteiner/slot_5"]
+layout_mode = 2
+text = "5-"
+
+[node name="name" type="Label" parent="rankConteiner/slot_5"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="score" type="Label" parent="rankConteiner/slot_5"]
+layout_mode = 2
+vertical_alignment = 1

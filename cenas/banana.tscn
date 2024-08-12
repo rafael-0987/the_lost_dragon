@@ -1,0 +1,135 @@
+[gd_scene load_steps=8 format=3 uid="uid://cypqs5xksl6ch"]
+
+[ext_resource type="Texture2D" uid="uid://cmulm70jp0neg" path="res://sprite/banana/banana1.png" id="1_4tbj6"]
+[ext_resource type="Script" path="res://scripts/banana.gd" id="1_grb5t"]
+[ext_resource type="Texture2D" uid="uid://dg73wffyksri8" path="res://sprite/light/light-export.png" id="3_lomna"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wo3ub"]
+radius = 26.19
+
+[sub_resource type="Animation" id="Animation_2md28"]
+resource_name = "idle"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Banana:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_4tbj6")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Banana:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2, 1), Vector2(2, 4), Vector2(2, 0), Vector2(2, -2), Vector2(2, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("light:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 2), Vector2(0, 0), Vector2(0, -2), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gsiic"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Banana:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_4tbj6")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Banana:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("light:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6yc6w"]
+_data = {
+"RESET": SubResource("Animation_gsiic"),
+"idle": SubResource("Animation_2md28")
+}
+
+[node name="banana" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_grb5t")
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_wo3ub")
+
+[node name="Banana" type="Sprite2D" parent="."]
+position = Vector2(2, 1)
+scale = Vector2(2, 2)
+texture = ExtResource("1_4tbj6")
+
+[node name="anim" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+speed_scale = 0.3
+libraries = {
+"": SubResource("AnimationLibrary_6yc6w")
+}
+
+[node name="light" type="Node2D" parent="."]
+visible = false
+scale = Vector2(2, 2)
+
+[node name="blackout" type="PointLight2D" parent="light"]
+color = Color(1, 1, 1, 0.788235)
+energy = 3.0
+texture = ExtResource("3_lomna")
+
+[node name="shadow" type="PointLight2D" parent="light"]
+texture_filter = 2
+color = Color(1, 1, 1, 0.407843)
+energy = 2.28
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 3.0
+texture = ExtResource("3_lomna")
+texture_scale = 0.5
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

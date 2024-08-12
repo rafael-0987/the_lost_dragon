@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://bytg42bco7gb5"]
+
+[ext_resource type="Script" path="res://scripts/timer.gd" id="1_348lp"]
+[ext_resource type="FontFile" uid="uid://dvd5fcgqpcoa7" path="res://fonte-letra/pixel-comic-sans-undertale-sans-font.ttf" id="2_0j7ca"]
+[ext_resource type="Texture2D" uid="uid://cmulm70jp0neg" path="res://sprite/banana/banana1.png" id="3_7yfx3"]
+[ext_resource type="Texture2D" uid="uid://cl5onavrys8x" path="res://sprite/lua/luat.png" id="4_qkpq8"]
+
+[node name="hud" type="CanvasLayer"]
+process_mode = 3
+
+[node name="control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_348lp")
+
+[node name="life" type="Label" parent="control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 34.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.00784314, 0.439216, 1)
+theme_override_fonts/font = ExtResource("2_0j7ca")
+theme_override_font_sizes/font_size = 32
+
+[node name="banana_" type="Node2D" parent="control"]
+position = Vector2(7, 52)
+
+[node name="banana" type="Label" parent="control/banana_"]
+offset_left = 27.0
+offset_top = -2.0
+offset_right = 67.0
+offset_bottom = 46.0
+theme_override_fonts/font = ExtResource("2_0j7ca")
+theme_override_font_sizes/font_size = 32
+text = "1"
+
+[node name="sprite" type="Sprite2D" parent="control/banana_"]
+position = Vector2(18, 25.5)
+scale = Vector2(1.4375, 1.40625)
+texture = ExtResource("3_7yfx3")
+
+[node name="lua" type="Node2D" parent="control"]
+position = Vector2(2, -39)
+
+[node name="label" type="Label" parent="control/lua"]
+offset_left = 45.0
+offset_top = 36.0
+offset_right = 85.0
+offset_bottom = 84.0
+theme_override_fonts/font = ExtResource("2_0j7ca")
+theme_override_font_sizes/font_size = 32
+
+[node name="sprite" type="Sprite2D" parent="control/lua"]
+position = Vector2(23, 63)
+scale = Vector2(1.59375, 1.60938)
+texture = ExtResource("4_qkpq8")

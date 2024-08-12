@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://bp3iivyoasi8i"]
+
+[ext_resource type="Script" path="res://scripts/craditos.gd" id="1_go2oo"]
+[ext_resource type="FontFile" uid="uid://dvd5fcgqpcoa7" path="res://fonte-letra/pixel-comic-sans-undertale-sans-font.ttf" id="2_ojm31"]
+
+[node name="craditos" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_go2oo")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -423.5
+offset_top = 650.0
+offset_right = 423.5
+offset_bottom = 1629.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_ojm31")
+theme_override_font_sizes/font_size = 62
+text = "       PROGRAMADOR:
+          Rafael Meirelles
+YouTube: Universo Do Rafax     
+
+       ARTES DO JOGO:
+          Camila Santos
+YouTube: Universo Da Mila
+
+       EFEITO SONORO:
+            Rafael Meirelles
+             Camila Santos"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.756863, 0, 0, 0.709804)
+theme_override_fonts/font = ExtResource("2_ojm31")
+theme_override_font_sizes/font_size = 32
+text = "VOLTAR"
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

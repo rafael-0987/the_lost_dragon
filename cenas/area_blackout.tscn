@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6toqvolyg20i"]
+
+[ext_resource type="Script" path="res://scripts/area_blackout.gd" id="1_j2h7b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hf2hn"]
+
+[node name="area_blackout" type="Area2D"]
+collision_layer = 8
+script = ExtResource("1_j2h7b")
+
+[node name="collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hf2hn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
